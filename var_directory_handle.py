@@ -2,6 +2,15 @@ import os
 
 
 def get_var_list(vd):
+    def find_all_file(vd):
+        for root, ds, fs in os.walk(base):
+            for f in fs:
+                if f.endswith('.var'):
+                    fullname = os.path.join(root, f)
+                    var_dictionary = {}
+                    var_dictionary[f] = fullname
+                    yield var_dictionary
+
     return vd
 
 
