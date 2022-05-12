@@ -32,13 +32,12 @@ def reg_test():
         print("not macth")
 
 
-def get_var_mod(var):
+def get_var_mod(var_name,var_path):
     var_data: dict[str, list[Any]] = {"clothing": [], "scene": [], "looks": [], "hairstyle": [], "plugin": [],
                                       "assets": []}
-    package_name = "temp_var"
 
     try:
-        with zipfile.ZipFile(var) as f:
+        with zipfile.ZipFile(var_path) as f:
             #验证包体合法性
 
             #读取模组
@@ -58,10 +57,13 @@ def get_var_mod(var):
                             fdata = f.read(_pic_path)
                             # 如果存在预览图，则写回标志位
                             m['preview'] = 1
-                            _target_site = os.getcwd() + "\\temp\\" + m["name"] + ".jpg"
-                            # _target_site = os.getcwd() + "\\___PreviewPics__\\" + m["type"] + "\\" + package_name + "\\" + m["name"] + ".jpg"
+                            _target_direct = os.getcwd() + "\\___PreviewPics__\\"
+                            # _target_direct = os.getcwd() + "\\___PreviewPics__\\" + m["type"] + "\\" + var_name + "\\"
+                            if not os.path.exists(_target_direct):
+                                os.makedirs(_target_direct)
+
                             try:
-                                (lambda ff, d: (ff.write(d), ff.close()))(open(_target_site, 'wb'), fdata)
+                                (lambda ff, d: (ff.write(d), ff.close()))(open(_target_direct+ m["name"] + ".jpg", 'wb'), fdata)
                             except Exception as e:
                                 print(e)
 
@@ -82,5 +84,6 @@ def get_var_mod(var):
 if __name__ == '__main__':
     # var_file_dir = "J:\\vam_vars\\___VarTidied___\\50shades\\50shades.Cum_pack_of_9.1.var"
     var_file_path = "J:\\vam_vars\\___VarTidied___\\AcidBubbles\\AcidBubbles.DraeneiFutaFemalePov.4.var"
-    print(get_var_mod(var_file_path))
+    var_name = "AcidBubbles.DraeneiFutaFemalePov.4.var"
+    print(get_var_mod(var_name,var_file_path))
 
