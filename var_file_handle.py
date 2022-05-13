@@ -57,13 +57,14 @@ def get_var_mod(var_name,var_path):
                             fdata = f.read(_pic_path)
                             # 如果存在预览图，则写回标志位
                             m['preview'] = 1
-                            _target_direct = os.getcwd() + "\\___PreviewPics__\\"
-                            # _target_direct = os.getcwd() + "\\___PreviewPics__\\" + m["type"] + "\\" + var_name + "\\"
+                            _target_direct = os.getcwd() + "\\__PreviewPics__\\"
+                            _target_file_name = _target_direct  + m["type"] + "__" + var_name + "__"+ m["name"] + ".jpg"
+                            # _target_direct = os.getcwd() + "\\__PreviewPics__\\" + m["type"] + "\\" + var_name + "\\"
                             if not os.path.exists(_target_direct):
                                 os.makedirs(_target_direct)
 
                             try:
-                                (lambda ff, d: (ff.write(d), ff.close()))(open(_target_direct+ m["name"] + ".jpg", 'wb'), fdata)
+                                (lambda ff, d: (ff.write(d), ff.close()))(open(_target_file_name, 'wb'), fdata)
                             except Exception as e:
                                 print(e)
 

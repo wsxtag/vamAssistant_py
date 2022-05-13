@@ -10,7 +10,8 @@ import var_file_handle
 # 按间距中的绿色按钮以运行脚本。
 if __name__ == '__main__':
     # var_dir = "J:\\vam_vars\\___VarTidied___\\"
-    var_dir = "J:\\BaiduNetdiskDownload\\vam\\380G资源\\___VarTidied___\\"
+    # var_dir = "J:\\BaiduNetdiskDownload\\vam\\380G资源\\___VarTidied___\\"
+    var_dir = "J:\\BaiduNetdiskDownload\\vam\\380G资源\\___VarRedundant___\\"
     l = var_directory_handle.get_var_list(var_dir)
     n = {}
     print(l)
