@@ -20,3 +20,30 @@ if __name__ == '__main__':
     var_dir = "J:\\vam_vars\\___VarTidied___\\"
     print(get_var_list(var_dir))
     print(len(var_dir))
+
+
+"""
+                        '''INSERT INTO var_list (var_name,var_path,is_fav,is_install,clothing_cnt,clothing_mis_pic_cnt,scene_cnt,scene_mis_pic_cnt,looks_cnt,looks_mis_pic_cnt,hairstyle_cnt,hairstyle_mis_pic_cnt,plugin_cnt,plugin_mis_pic_cnt,assets_cnt,assets_mis_pic_cnt,preview_pic_cnt,preview_pic_name) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
+
+                    __data = [(
+                        var_line["var_name“],
+                        var_line["var_path“],
+                        var_line["is_fav“],
+                        var_line["is_install“],
+                        var_line["clothing_cnt“],
+                        var_line["clothing_mis_pic_cnt“],
+                        var_line["scene_cnt“],
+                        var_line["scene_mis_pic_cnt“],
+                        var_line["looks_cnt“],
+                        var_line["looks_mis_pic_cnt“],
+                        var_line["hairstyle_cnt“],
+                        var_line["hairstyle_mis_pic_cnt“],
+                        var_line["plugin_cnt“],
+                        var_line["plugin_mis_pic_cnt“],
+                        var_line["assets_cnt“],
+                        var_line["assets_mis_pic_cnt“],
+                        var_line["preview_pic_cnt“],
+                        var_line["scene_cnt“],
+                        var_line["preview_pic_name“]
+                    )]
+"""

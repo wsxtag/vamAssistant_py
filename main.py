@@ -5,17 +5,15 @@
 import var_directory_handle
 import var_file_handle
 
-
-
 # 按间距中的绿色按钮以运行脚本。
 if __name__ == '__main__':
     # var_dir = "J:\\vam_vars\\___VarTidied___\\"
     # var_dir = "J:\\BaiduNetdiskDownload\\vam\\380G资源\\___VarTidied___\\"
-    var_dir = "J:\\BaiduNetdiskDownload\\vam\\380G资源\\___VarRedundant___\\"
+    # var_dir = "J:\\BaiduNetdiskDownload\\vam\\380G资源\\___VarRedundant___\\"
+    var_dir = "J:\\BaiduNetdiskDownload\\VAM55G个人整合包\\3D素材整合1.2\\Virt A Mate\\_AddonPackages\\___VarTidied___\\AnythingFashionVR\\"
     l = var_directory_handle.get_var_list(var_dir)
     n = {}
     print(l)
     for i in l:
-        n[i]=var_file_handle.get_var_mod(i,l[i])
+        n[i] = var_file_handle.get_var_mod(i, l[i])  # (包名，var包的路径）
     print(n)
-
